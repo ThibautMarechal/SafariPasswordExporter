@@ -2,8 +2,8 @@ on run
 	delay 2
 	set path_to_desktop_folder to ((get path to desktop folder from user domain) as text)
 	set name_of_me to "Safari Passwords"
-	set passwords_file_txt to (path_to_desktop_folder & name_of_me & ".txt")
-	set passwords_text to (name_of_me & " as of " & current_date & return)
+	set passwords_file_txt to (path_to_desktop_folder & name_of_me & ".csv")
+	set passwords_text to "login_uri,login_username,login_password" & return
 	tell application "System Events" to tell application process "Safari"
 		if (exists window "Passwords") then
 			tell window "Passwords" to tell group 1 to tell group 1 to tell scroll area 1 to tell table 1
@@ -22,7 +22,7 @@ on run
 							repeat with int_website from 1 to count_of_websites
 								tell row int_website to tell UI element 1
 									set this_address to (get value of static text 1)
-									set passwords_text to (passwords_text & return & this_address & tab & this_user_name & tab & this_password)
+									set passwords_text to (passwords_text & this_address & "," & this_user_name & "," & this_password & return)
 								end tell
 							end repeat
 						end tell
