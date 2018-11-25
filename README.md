@@ -12,3 +12,5 @@ It's a modified verion of the script provided by 1Password (https://discussions.
 - Unlock the dialog so your list of credentials is visible
 - Switch back to Script Editor and hit its Run button
 - Switch back to Safari and select one row of the password table
+
+The file safari_passwords.csv should be created on your Desktop.
