@@ -1,7 +1,7 @@
 on run
 	delay 2
 	set path_to_desktop_folder to ((get path to desktop folder from user domain) as text)
-	set name_of_me to "Safari Passwords"
+	set name_of_me to "safari_passwords"
 	set passwords_file_txt to (path_to_desktop_folder & name_of_me & ".csv")
 	set passwords_text to "login_uri,login_username,login_password" & return
 	tell application "System Events" to tell application process "Safari"
